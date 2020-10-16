@@ -29,7 +29,7 @@
     </div>
 
     <!-- Search and Cart Features -->
-    <div class="mid-nav">
+    <div class="mid-nav"> 
         <!-- Search Bar -->
         <div class="search">
         <h5>Search</h5>
@@ -108,50 +108,50 @@
             <div class="spec-selection">
                 <p class="dark-grey">Select specifications and add to cart. If you created a pet account, select it below to auto-populate specifications:</p>
                 <!-- Your Pets - Pet Selection -->
-                <div class="product-spec-row">
+                <div class="your-pets product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Your Pets:</h5></div>
-                    <div class="boris product-detail-icon"></div>
-                    <div class="ted product-detail-icon"></div>
-                    <div class="ernie product-detail-icon"></div>
+                    <div class="boris product-detail-icon" onclick="productSpecSelection('boris')"></div>
+                    <div class="ted product-detail-icon" onclick="productSpecSelection('ted')"></div>
+                    <div class="ernie product-detail-icon" onclick="productSpecSelection('ernie')"></div>
                 </div>
 
                 <!-- Color Selection -->
-                <div class="product-spec-row">
+                <div class="color product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Color:</h5></div>
-                    <div class="strawberry product-detail-icon"></div>
-                    <div class="blackberry product-detail-icon"></div>
-                    <div class="crazyberry product-detail-icon"></div>
-                    <div class="fire-orange product-detail-icon">
+                    <div class="strawberry product-detail-icon" onclick="productSpecSelection('strawberry')"></div>
+                    <div class="blackberry product-detail-icon" onclick="productSpecSelection('blackberry')"></div>
+                    <div class="crazyberry product-detail-icon" onclick="productSpecSelection('crazyberry')"></div>
+                    <div class="fire-orange product-detail-icon" onclick="productSpecSelection('fire-orange')">
                     </div>
                 </div>
 
                 <!-- Size Specification -->
-                <div class="product-spec-row">
+                <div class="size product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Size:</h5></div>
-                    <div class="product-size-icon">
+                    <div class="xs product-size-icon" onclick="productSpecSelection('xs')">
                         <h5>XS</h5>
                     </div>
-                    <div class="product-size-icon">
+                    <div class="s product-size-icon" onclick="productSpecSelection('s')">
                         <h5>S</h5>
                     </div> 
-                    <div class="product-size-icon">
+                    <div class="m product-size-icon" onclick="productSpecSelection('m')">
                         <h5>M</h5>
                     </div>
-                    <div class="product-size-icon">
+                    <div class="l product-size-icon" onclick="productSpecSelection('l')">
                         <h5>L</h5>
                     </div>
                 </div>
 
                 <!-- Quantity Selection -->
-                <div class="product-spec-row">
+                <div class="quantity product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Quantity:</h5></div>
-                    <input type="number" id="product-quantity" name="quantity" min="1" max="99">
+                    <input type="number" id="product-quantity" name="quantity" min="0" max="99" onclick="productSpecSelection('quantity')">
                 </div>
             </div>
 
             <!-- Product Purchase and Interaction Buttons -->
             <div id="product-selection-buttons">
-                <button id="add-to-cart-big" class="greyed-out">
+                <button id="add-to-cart-big" class="greyed-out" onclick="addToCart()">
                     <h3 class="white">Add to Cart</h3>
                 </button>
                 <button id="wishlist-button-big" class="yellow-button">
