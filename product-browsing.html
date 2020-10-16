@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Browsing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    
+    <!-- Upper Header -->
+    <header id="banner-grid">
+
+    <!-- Main Logo -->
+        <a href="index.html">
+            <div class="logo">
+                    <img class="logo-pic" src="Images/muddy-paws-logo.svg" alt="Muddy Paws logo"/>        
+            </div>
+        </a>
+    
+    <!-- Upper Navigation with Account and Help -->
+    <div class="top-nav">
+        <h5 class="purple">Welcome, Timothy!</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Account.svg" alt="account icon"/>Account</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Help.svg" alt="help icon"/>Help</h5>
+    </div>
+
+    <!-- Search and Cart Features -->
+    <div class="mid-nav">
+        <!-- Search Bar -->
+        <div class="search">
+        <h5>Search</h5>
+        <img src="Images/Search.svg" alt="Search bar magnifying glass icon"/>
+        </div>
+        <!-- Cart + Wishlist + Compare -->
+        <div class="shopping">
+        <div class="cart-nav">
+            <img class="icon" src="Images/Cart.svg" alt="Shopping Cart icon">
+            <h3 class="purple">Cart (0)</h3>
+        </div>
+        <div class="shopping-features">
+            <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
+            <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
+        </div>
+        </div>
+    </div>
+
+    <!-- Dropdown Menus -->
+    <div class="bottom-nav">
+        <div class="dropdowns">
+        <!-- Dog Dropdown -->
+        <div class="dog-dropdown">
+            <h3 class="white">Shop for Dogs</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Cat Dropdown -->
+        <div class="cat-dropdown">
+            <a href="product-browsing.html"><h3 class="white">Shop for Cats</h3></a>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Product Dropdown -->
+        <div class="product-dropdown">
+            <h3 class="white">Shop by Product</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- All Products -->
+        <div class="all-products">
+            <h3 class="white">All Products</h3>
+        </div>
+        </div>
+    </div>
+
+    <!-- Shipping Info  -->
+    <div class="shipping-banner">
+        <h5 class="white no-margins">FREE 1-2 DAY SHIPPING ON ORDERS OVER $50</h5>
+    </div>
+
+    </header>
+
+
+    <!--Browsing Section -->
+
+    <div id="product-browsing">
+    
+    <!-- Filtering Section -->
+
+        <div id="product-filtering">
+            <h3 class="purple">Filter By:</h3>
+            <div class="filter-cardstack">
+                
+                <!-- Filter by Animal Card -->
+                <div class="filter-card">
+                    <div class="filter-title-down">
+                        <h5 class="dark-grey">Animal</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                    <label class="filter-item"><p>Cat</p>
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="filter-item"><p>Dog</p>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+                
+                <!-- Filter by Product Type Card -->
+                <div class="filter-card">
+                    <div class="filter-title-down">
+                        <h5 class="dark-grey">Product Type</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                    <label class="filter-item"><p>Harness</p>
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="filter-item"><p>Harness storage attachment</p>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="filter-item"><p>GPS tracker collar</p>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="filter-item"><p>Backpack</p>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+                
+                <!-- Filter by Size Card -->
+                <div class="filter-card">
+                    <div class="filter-title-up">
+                        <h5 class="dark-grey">Size</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                </div>
+
+                <!-- Filter by Color Card -->
+                <div class="filter-card">
+                    <div class="filter-title-up">
+                        <h5 class="dark-grey">Color</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                </div>
+                
+                <!-- Filter by Rating Card -->
+                <div class="filter-card">
+                    <div class="filter-title-up">
+                        <h5 class="dark-grey">Rating</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                </div>
+
+                <!-- Filter by Price Card -->
+                <div class="filter-card">
+                    <div class="filter-title-up">
+                        <h5 class="dark-grey">Price</h5>
+                        <img class="icon" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    <!-- Main Product Browsing Page Section  -->
+
+        <div id="product-showcase">
+            <!-- Site Trail  -->
+            <p class="site-trail grey">Home / Cats</p>
+            <!-- Top Banner  -->
+            <div class="banner">
+                <h2 class="purple">Shop Cats</h2>
+                <div class="banner-polygon"></div>
+                <div class="banner-image"></div>
+            </div>
+
+            <!-- Product Cards  -->
+            <div id="product-card-area">
+                    <!-- Cat Harness Card  -->
+                    <a href="product-details.html">
+                        <div id="cat-card-harness" class="product-card">
+                             <!-- Product Image -->
+                             <div class="swatches">
+                                <div class="strawberry swatch"></div>
+                                <div class="blackberry swatch"></div>
+                                <div class="crazyberry swatch"></div>
+                                <div class="fire-orange swatch"></div>
+                            </div>
+                             <div class="product-image">
+                                <img src="Images/cat-harness.jpeg" alt="cat in harness"/>
+                            </div>
+                             <!-- Product Information  -->
+                            <div class="product-overview">
+                                <h3 class=" no-margins dark-purple">Cat Harness</h3>
+                                <div class="rating-stars">
+                                    <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                                    <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                                    <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                                    <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                                    <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                                </div>
+                                <h5 class='dark-purple no-margins'>$19.99</h5>
+                            </div>
+                        </div>
+                    </a>
+               
+                <!-- Cat Food Storage Attachment Card -->
+                <div id="cat-card-food-storage-attachment" class="product-card">
+                    <!-- Product Image -->
+                    <div class="swatches">
+                        <div class="strawberry swatch"></div>
+                        <div class="blackberry swatch"></div>
+                        <div class="crazyberry swatch"></div>
+                        <div class="fire-orange swatch"></div>
+                    </div>
+                    <div class="product-image">
+                        <img src="Images/cat-food-storage-attachment.jpeg" alt="cat with food storage attachment"/>
+                    </div>
+                    <!-- Product Information -->
+                    <div class="product-overview">
+                        <h3 class=" no-margins dark-purple">Cat Food Storage Attachment</h3>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        </div>
+                        <h5 class='dark-purple no-margins'>$9.99</h5>
+                    </div>
+                </div>
+
+                <!-- Cat Water Storage Attachment Card -->
+                <div id="cat-card-water-storage-attachment" class="product-card">
+                    <!-- Product Image -->
+                    <div class="swatches">
+                        <div class="strawberry swatch"></div>
+                        <div class="blackberry swatch"></div>
+                        <div class="crazyberry swatch"></div>
+                        <div class="fire-orange swatch"></div>
+                    </div>
+                    <div class="product-image">
+                        <img src="Images/cat-water-storage-attachment.jpeg" alt="cat with water storage attachment"/>
+                    </div>
+                    <!-- Product Information -->
+                    <div class="product-overview">
+                        <h3 class=" no-margins dark-purple">Cat Water Storage Attachment</h3>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="unfilled-star" src="Images/star-black.svg" alt="unfilled review star"/>
+                        </div>
+                        <h5 class='dark-purple no-margins'>$9.99</h5>
+                    </div>
+                </div>
+
+                <!-- Card GPS Tracker Collar Card -->
+                <div id="cat-card-tracker-collar" class="product-card">
+                    <!-- Product Image -->
+                    <div class="swatches">
+                        <div class="strawberry swatch"></div>
+                        <div class="blackberry swatch"></div>
+                        <div class="crazyberry swatch"></div>
+                        <div class="fire-orange swatch"></div>
+                    </div>
+                    <div class="product-image">
+                        <img src="Images/cat-collar.jpeg" alt="cat with GPS tracker collar"/>
+                    </div>
+                    <!-- Product Information -->
+                    <div class="product-overview">
+                        <h3 class=" no-margins dark-purple">Cat GPS Tracker Collar</h3>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        </div>
+                        <h5 class='dark-purple no-margins'>$29.99</h5>
+                    </div>
+                </div>
+
+                <!-- Cat Backpack Card  -->
+                <div id="cat-card-backpack" class="product-card">
+                    <!-- Product Image -->
+                    <div class="swatches">
+                        <div class="strawberry swatch"></div>
+                        <div class="blackberry swatch"></div>
+                        <div class="crazyberry swatch"></div>
+                        <div class="fire-orange swatch"></div>
+                    </div>
+                    <div class="product-image">
+                        <img src="Images/cat-backpack.jpeg" alt="cat in backpack"/>
+                    </div>
+                    <!-- Product Information -->
+                    <div class="product-overview">
+                        <h3 class=" no-margins dark-purple">Cat Backpack</h3>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="unfilled-star" src="Images/star-black.svg" alt="unfilled review star"/>
+                        </div>
+                        <h5 class='dark-purple no-margins'>$49.99</h5>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+    </div>   
+    <div class="push"></div>
+    </div> 
+
+         <!-- Footer -->
+        <footer class="footer">
+                <p class="white">Copyright © 2020 Muddy Paws, Inc.</p>
+        </footer>
+    </body>
+   
+
+    
+</html>

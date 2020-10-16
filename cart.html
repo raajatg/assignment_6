@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Browsing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    
+    <!-- Upper Header -->
+    <header id="banner-grid">
+
+    <!-- Main Logo -->
+        <a href="index.html">
+            <div class="logo">
+                    <img class="logo-pic" src="Images/muddy-paws-logo.svg" alt="Muddy Paws logo"/>        
+            </div>
+        </a>
+    
+    <!-- Upper Navigation with Account and Help -->
+    <div class="top-nav">
+        <h5 class="purple">Welcome, Timothy!</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Account.svg" alt="account icon"/>Account</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Help.svg" alt="help icon"/>Help</h5>
+    </div>
+
+    <!-- Search and Cart Features -->
+    <div class="mid-nav">
+        <!-- Search Bar -->
+        <div class="search">
+        <h5>Search</h5>
+        <img src="Images/Search.svg" alt="Search bar magnifying glass icon"/>
+        </div>
+        <!-- Cart + Wishlist + Compare -->
+        <div class="shopping">
+        <div class="cart-nav">
+            <img class="icon" src="Images/Cart.svg" alt="Shopping Cart icon">
+            <h3 class="purple">Cart (0)</h3>
+        </div>
+        <div class="shopping-features">
+            <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
+            <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
+        </div>
+        </div>
+    </div>
+
+    <!-- Dropdown Menus -->
+    <div class="bottom-nav">
+        <div class="dropdowns">
+        <!-- Dog Dropdown -->
+        <div class="dog-dropdown">
+            <h3 class="white">Shop for Dogs</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Cat Dropdown -->
+        <div class="cat-dropdown">
+            <a href="product-browsing.html"><h3 class="white">Shop for Cats</h3></a>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Product Dropdown -->
+        <div class="product-dropdown">
+            <h3 class="white">Shop by Product</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- All Products -->
+        <div class="all-products">
+            <h3 class="white">All Products</h3>
+        </div>
+        </div>
+    </div>
+
+    <!-- Shipping Info  -->
+    <div class="shipping-banner">
+        <h5 class="white no-margins">FREE 1-2 DAY SHIPPING ON ORDERS OVER $50</h5>
+    </div>
+
+    </header>
+
+    <div id="cart-view">
+        <div id="total-summary">
+            <h3 class="green no-margins">Subtotal: $19.99</h3>
+            <p>1 item</p>
+            <button class="green-button">Proceed to Checkout</button>
+        </div>
+        <div id="cart-items">
+            <h3 class="purple no-margins">Your Shopping Cart</h3>
+            <div class="cart-item-card">
+                <!-- Product Image -->
+                <div class="cat-card-harness product-detailed-image">
+                </div>
+                <!-- Product High-Level Information -->
+                <div class="product-overview">
+                    <h3 class=" no-margins dark-purple">Cat Food Storage Attachment</h3>
+                    <div class="rating-stars">
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                    </div>
+                    <h5 class='dark-purple no-margins'>
+                        $19.99
+                    </h5>
+                </div>
+                <div class="selected-specs-summary">
+                    <div class="size-color-summary">
+                        <p>Tiny</p>
+                        <p class="red">(Edit)</p>
+                        <p>&#9679;</p>
+                        <p>Strawberry</p>
+                        <p class="red">(Edit)</p>
+                    </div>
+                    <div class="quantity-summary">
+                        <p>Quantity: 1</p>
+                        <p class="red">(Edit)</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="wishlist-items">
+            <h3 class="purple no-margins">Your Wishlist</h3>
+        </div>
+        <div id="wishlist-flexbox">
+            <div class="wishlist-item-card">
+                <div class="cat-card-harness product-detailed-image">
+                </div>
+                <!-- Product High-Level Information -->
+                <div class="product-overview">
+                    <h5 class="no-margins dark-purple">Cat Food Storage Attachment</h5>
+                    <div class="rating-stars">
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                    </div>
+                    <div class="price-and-cart-button">
+                        <p class='dark-purple no-margins'>
+                            $19.99
+                        </p>
+                        <button class="purple-button">
+                            <h5 class="no-margins">Add to Cart</h5>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+   
+
+         <!-- Footer -->
+        <footer class="footer">
+                <p class="white">Copyright © 2020 Muddy Paws, Inc.</p>
+        </footer>
+    </body>
+   
+
+    
+</html>

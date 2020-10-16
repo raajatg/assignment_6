@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Browsing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+
+    <!-- Upper Header -->
+    <header id="banner-grid">
+
+    <!-- Main Logo -->
+        <a href="index.html">
+            <div class="logo">
+                    <img class="logo-pic" src="Images/muddy-paws-logo.svg" alt="Muddy Paws logo"/>        
+            </div>
+        </a>
+    
+    <!-- Upper Navigation with Account and Help -->
+    <div class="top-nav">
+        <h5 class="purple">Welcome, Timothy!</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Account.svg" alt="account icon"/>Account</h5>
+        <h5 class="dark-purple"><img class="icon" src="Images/Help.svg" alt="help icon"/>Help</h5>
+    </div>
+
+    <!-- Search and Cart Features -->
+    <div class="mid-nav">
+        <!-- Search Bar -->
+        <div class="search">
+        <h5>Search</h5>
+        <img src="Images/Search.svg" alt="Search bar magnifying glass icon"/>
+        </div>
+        <!-- Cart + Wishlist + Compare -->
+        <div class="shopping">
+        <div class="cart-nav">
+            <img class="icon" src="Images/Cart.svg" alt="Shopping Cart icon">
+            <h3 class="purple">Cart (0)</h3>
+        </div>
+        <div class="shopping-features">
+            <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
+            <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
+        </div>
+        </div>
+    </div>
+
+    <!-- Dropdown Menus -->
+    <div class="bottom-nav">
+        <div class="dropdowns">
+        <!-- Dog Dropdown -->
+        <div class="dog-dropdown">
+            <h3 class="white">Shop for Dogs</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Cat Dropdown -->
+        <div class="cat-dropdown">
+            <a href="product-browsing.html"><h3 class="white">Shop for Cats</h3></a>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- Product Dropdown -->
+        <div class="product-dropdown">
+            <h3 class="white">Shop by Product</h3>
+            <img class="arrow" src="Images/Drop-Down-Arrow.svg" alt="drop-down arrow icon"/>
+        </div>
+        <!-- All Products -->
+        <div class="all-products">
+            <h3 class="white">All Products</h3>
+        </div>
+        </div>
+    </div>
+
+    <!-- Shipping Info  -->
+    <div class="shipping-banner">
+        <h5 class="white no-margins">FREE 1-2 DAY SHIPPING ON ORDERS OVER $50</h5>
+    </div>
+
+    </header>
+
+    <!-- Product Details and Specification Selection  -->  
+    <div id="detailed-product-view">
+      <!-- Site Trail -->
+        <p class="site-trail grey">Home / Cats / Cat Harness</p>
+
+    <!-- Product Specifications Selection and Ordering Section -->
+      <div id="product-specs">
+          <!-- Product Image -->
+          <div class="cat-card-harness product-detailed-image">
+          </div>
+          <!-- Product High-Level Information -->
+          <div class="product-overview">
+            <h3 class=" no-margins dark-purple">Cat Harness</h3>
+            <div class="rating-stars">
+                <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+            </div>
+            <h5 class='dark-purple no-margins'>
+                $19.99
+            </h5>
+            </div>
+            <!-- Specification Selection -->
+            <div class="spec-selection">
+                <p class="dark-grey">Select specifications and add to cart. If you created a pet account, select it below to auto-populate specifications:</p>
+                <!-- Your Pets - Pet Selection -->
+                <div class="product-spec-row">
+                    <div class="spec-name"><h5 class="dark-grey">Your Pets:</h5></div>
+                    <div class="boris product-detail-icon"></div>
+                    <div class="ted product-detail-icon"></div>
+                    <div class="ernie product-detail-icon"></div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="product-spec-row">
+                    <div class="spec-name"><h5 class="dark-grey">Color:</h5></div>
+                    <div class="strawberry product-detail-icon"></div>
+                    <div class="blackberry product-detail-icon"></div>
+                    <div class="crazyberry product-detail-icon"></div>
+                    <div class="fire-orange product-detail-icon">
+                    </div>
+                </div>
+
+                <!-- Size Specification -->
+                <div class="product-spec-row">
+                    <div class="spec-name"><h5 class="dark-grey">Size:</h5></div>
+                    <div class="product-size-icon">
+                        <h5>XS</h5>
+                    </div>
+                    <div class="product-size-icon">
+                        <h5>S</h5>
+                    </div> 
+                    <div class="product-size-icon">
+                        <h5>M</h5>
+                    </div>
+                    <div class="product-size-icon">
+                        <h5>L</h5>
+                    </div>
+                </div>
+
+                <!-- Quantity Selection -->
+                <div class="product-spec-row">
+                    <div class="spec-name"><h5 class="dark-grey">Quantity:</h5></div>
+                    <input type="number" id="product-quantity" name="quantity" min="1" max="99">
+                </div>
+            </div>
+
+            <!-- Product Purchase and Interaction Buttons -->
+            <div id="product-selection-buttons">
+                <button id="add-to-cart-big" class="greyed-out">
+                    <h3 class="white">Add to Cart</h3>
+                </button>
+                <button id="wishlist-button-big" class="yellow-button">
+                    <h3 class="white">Add to Wishlist</h3>
+                    <img src="Images/Heart-Unfilled.svg" alt="wishlist icon"/>
+                </button>
+                <button id="compare-button-big" class="yellow-button">
+                    <h3 class="white">Compare Products</h3>
+                    <img src="Images/compare-white.svg" alt="compare icon"/>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Product Information Collapsibles -->
+    <div id="product-detail-collapsibles">
+        <!-- Product Details Collapisble -->
+        <button type="button" class="collapsible" onclick="collapsibleInteraction(0)">Product Details<img id="arrow0" src="Images/Arrow-Up.svg" alt="collapsible arrow"/></button>
+        <div class="content">
+            <div class="expanded-content">
+                <div class="left-side product">
+                    <h5 class="purple">Description</h5>
+                    <p class="dark-grey">Now your indoor cat can brave the great outdoors with our cat harness. We deliver high-quality, breathable and light material that ensures that walking will be fun and enjoyable for everyone, with a light breathable mesh that will delight your cat. The design also distributes pressure evenly across your cat’s body, and prevents strain or discomfort. </p>
+                </div>
+                <div class="right-side product">
+                    <h5 class="purple">Materials</h5>
+                    <ul>
+                        <li><p>Nylon</p></li>
+                        <li><p>Mesh</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sizing Guide Collapisble -->
+        <button type="button" class="collapsible" onclick="collapsibleInteraction(1)">Sizing Guide<img id="arrow1" src="Images/Arrow-Up.svg" alt="collapsible arrow"/></button>
+        <div class="content">
+            <div class="expanded-content">
+                <div class="left-side size">
+                    <h5 class="purple">How to Measure</h5>
+                    <p class="dark-grey"><strong>Neck:</strong> Measure around the neck as you would for a collar. </p>
+                    <p class="dark-grey"><strong>Chest:</strong> Measure the chest girth at its widest point, all the way around, which is typically right behind the front legs</p>
+                    <p class="dark-grey"><strong>Length:</strong> Measure from the base of your pet's neck to the base of the tail.</p>
+                </div>
+                <div class="right-side size">
+                    <h5 class="purple">Size Measurements</h5>
+                    <p class="dark-grey"><strong>Extra Small:</strong> 12-18 inch chest</p>
+                    <p class="dark-grey"><strong>Small:</strong> 18-24 inch chest</p>
+                    <p class="dark-grey"><strong>Medium:</strong> 24-36 inch chest</p>
+                    <p class="dark-grey"><strong>Large:</strong> 36+ inch chest</p>
+                </div>
+            </div>    
+        </div>
+        
+        <!-- Customer Reviews Collapisble -->
+        <button type="button" class="collapsible" onclick="collapsibleInteraction(2)">Customer Reviews<img id="arrow2" src="Images/Arrow-Up.svg" alt="collapsible arrow"/></button>
+        <div class="content">
+            <div class="expanded-content">
+                <div class="left-side reviews">
+                    <div class="review-title">
+                        <h5 class="purple">Unbelievably Helpful!</h5>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        </div>
+                    </div>
+                    <p class="dark-grey">I bought this harness two years ago and it hasn’t let me down since!</p>   
+                    
+                    <div class="review-title">
+                        <h5 class="purple">Pretty Reliable</h5>
+                        <div class="rating-stars">
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                            <img class ="unfilled-star" src="Images/star-black.svg" alt="unfilled review star"/>
+                        </div>
+                    </div>
+                    <p class="dark-grey">My cat has been using this harness for 6 months now and seems to be mostly accustomed to it.
+                        She can still have moments where it irritates her and she tries to wiggle free, but for the most part, it's served its purpose!
+                    </p>   
+                
+                </div>
+            </div>       
+        </div>
+        
+    </div>
+
+    <!-- Other Product Recommendations -->
+    <div id="other-recommendations">
+        <h3 class="purple">Items We Think You'd Love</h3>
+        <div id="product-card-area">
+            <!-- Cat Water Storage Attachment Card -->
+            <div id="cat-card-water-storage-attachment" class="product-card">
+                <!-- Product Image -->
+                <div class="swatches">
+                    <div class="strawberry swatch"></div>
+                    <div class="blackberry swatch"></div>
+                    <div class="crazyberry swatch"></div>
+                    <div class="fire-orange swatch"></div>
+                </div>
+                <div class="product-image">
+                    <img src="Images/cat-water-storage-attachment.jpeg" alt="cat with water storage attachment"/>
+                </div>
+                <!-- Product Information -->
+                <div class="product-overview">
+                    <h3 class=" no-margins dark-purple">Cat Water Storage Attachment</h3>
+                    <div class="rating-stars">
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="unfilled-star" src="Images/star-black.svg" alt="unfilled review star"/>
+                    </div>
+                    <h5 class='dark-purple no-margins'>$9.99</h5>
+                </div>
+            </div>
+
+            <!-- Card GPS Tracker Collar Card -->
+            <div id="cat-card-tracker-collar" class="product-card">
+                <!-- Product Image -->
+                <div class="swatches">
+                    <div class="strawberry swatch"></div>
+                    <div class="blackberry swatch"></div>
+                    <div class="crazyberry swatch"></div>
+                    <div class="fire-orange swatch"></div>
+                </div>
+                <div class="product-image">
+                    <img src="Images/cat-collar.jpeg" alt="cat with GPS tracker collar"/>
+                </div>
+                <!-- Product Information -->
+                <div class="product-overview">
+                    <h3 class=" no-margins dark-purple">Cat GPS Tracker Collar</h3>
+                    <div class="rating-stars">
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                    </div>
+                    <h5 class='dark-purple no-margins'>$29.99</h5>
+                </div>
+            </div>
+
+            <!-- Cat Backpack Card  -->
+            <div id="cat-card-backpack" class="product-card">
+                <!-- Product Image -->
+                <div class="swatches">
+                    <div class="strawberry swatch"></div>
+                    <div class="blackberry swatch"></div>
+                    <div class="crazyberry swatch"></div>
+                    <div class="fire-orange swatch"></div>
+                </div>
+                <div class="product-image">
+                    <img src="Images/cat-backpack.jpeg" alt="cat in backpack"/>
+                </div>
+                <!-- Product Information -->
+                <div class="product-overview">
+                    <h3 class=" no-margins dark-purple">Cat Backpack</h3>
+                    <div class="rating-stars">
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
+                        <img class ="unfilled-star" src="Images/star-black.svg" alt="unfilled review star"/>
+                    </div>
+                    <h5 class='dark-purple no-margins'>$49.99</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="white">Copyright © 2020 Muddy Paws, Inc.</p>
+    </footer>
+
+    </body>
+</html>
