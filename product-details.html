@@ -43,10 +43,12 @@
                 <h3 class="purple">Cart (0)</h3>
             </div>
         </a>
-        <div class="shopping-features">
-            <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
-            <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
-        </div>
+        <a href='cart.html'>
+            <div class="shopping-features">
+                <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
+                <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
+            </div>
+          </a>
         </div>
     </div>
 
@@ -112,34 +114,34 @@
                 <!-- Your Pets - Pet Selection -->
                 <div class="your-pets product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Your Pets:</h5></div>
-                    <div class="boris product-detail-icon" onclick="productSpecSelection('boris')"></div>
-                    <div class="ted product-detail-icon" onclick="productSpecSelection('ted')"></div>
-                    <div class="ernie product-detail-icon" onclick="productSpecSelection('ernie')"></div>
+                    <div class="boris product-detail-icon" onclick="productSpecSelection('boris', 'Cat Harness', '$19.99')"></div>
+                    <div class="ted product-detail-icon" onclick="productSpecSelection('ted', 'Cat Harness', '$19.99')"></div>
+                    <div class="ernie product-detail-icon" onclick="productSpecSelection('ernie', 'Cat Harness', '$19.99')"></div>
                 </div>
 
                 <!-- Color Selection -->
                 <div class="color product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Color:</h5></div>
-                    <div class="strawberry product-detail-icon" onclick="productSpecSelection('strawberry')"></div>
-                    <div class="blackberry product-detail-icon" onclick="productSpecSelection('blackberry')"></div>
-                    <div class="crazyberry product-detail-icon" onclick="productSpecSelection('crazyberry')"></div>
-                    <div class="fire-orange product-detail-icon" onclick="productSpecSelection('fire-orange')">
+                    <div class="strawberry product-detail-icon" onclick="productSpecSelection('strawberry', 'Cat Harness', '$19.99')"></div>
+                    <div class="blackberry product-detail-icon" onclick="productSpecSelection('blackberry', 'Cat Harness', '$19.99')"></div>
+                    <div class="crazyberry product-detail-icon" onclick="productSpecSelection('crazyberry', 'Cat Harness', '$19.99')"></div>
+                    <div class="fire-orange product-detail-icon" onclick="productSpecSelection('fire-orange', 'Cat Harness', '$19.99')">
                     </div>
                 </div>
 
                 <!-- Size Specification -->
                 <div class="size product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Size:</h5></div>
-                    <div class="xs product-size-icon" onclick="productSpecSelection('xs')">
+                    <div class="xs product-size-icon" onclick="productSpecSelection('xs', 'Cat Harness', '$19.99')">
                         <h5>XS</h5>
                     </div>
-                    <div class="s product-size-icon" onclick="productSpecSelection('s')">
+                    <div class="s product-size-icon" onclick="productSpecSelection('s', 'Cat Harness', '$19.99')">
                         <h5>S</h5>
                     </div> 
-                    <div class="m product-size-icon" onclick="productSpecSelection('m')">
+                    <div class="m product-size-icon" onclick="productSpecSelection('m', 'Cat Harness', '$19.99')">
                         <h5>M</h5>
                     </div>
-                    <div class="l product-size-icon" onclick="productSpecSelection('l')">
+                    <div class="l product-size-icon" onclick="productSpecSelection('l', 'Cat Harness', '$19.99')">
                         <h5>L</h5>
                     </div>
                 </div>
@@ -147,7 +149,7 @@
                 <!-- Quantity Selection -->
                 <div class="quantity product-spec-row">
                     <div class="spec-name"><h5 class="dark-grey">Quantity:</h5></div>
-                    <input type="number" id="product-quantity" name="quantity" min="0" max="99" onclick="productSpecSelection('quantity')">
+                    <input type="number" id="product-quantity" name="quantity" min="0" max="99" onclick="productSpecSelection('quantity', 'Cat Harness', '$19.99')">
                 </div>
             </div>
 
@@ -156,7 +158,7 @@
                 <button id="add-to-cart-big" class="greyed-out" onclick="addToCart()">
                     <h3 class="white">Add to Cart</h3>
                 </button>
-                <button id="wishlist-button-big" class="yellow-button">
+                <button id="wishlist-button-big" class="yellow-button" onclick="addToWishlist('Cat Harness', '$19.99')">
                     <h3 class="white">Add to Wishlist</h3>
                     <img src="Images/Heart-Unfilled.svg" alt="wishlist icon"/>
                 </button>

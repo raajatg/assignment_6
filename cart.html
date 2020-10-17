@@ -83,16 +83,16 @@
     <div id="cart-view">
         <div id="cart-empty">
             <div id="sad-dog"></div>
-            <button class="purple-button"><h3>Start Adding Items to Cart</h3></button>
+            <a href="product-browsing.html"><button class="purple-button"><h3>Start Adding Items to Cart</h3></button></a>
         </div>
         <div id="total-summary">
-            <h3 class="green no-margins">Subtotal: $19.99</h3>
-            <p>1 item</p>
+            <h3 class="subtotal green no-margins">Subtotal: $19.99</h3>
+            <p class="total-items">1 item</p>
             <button class="green-button">Proceed to Checkout</button>
         </div>
         <div id="cart-items">
             <h3 class="purple no-margins">Your Shopping Cart</h3>
-            <div class="cart-item-card">
+            <div id="order0" class="cart-item-card">
                 <!-- Product Image -->
                 <div class="cat-card-harness product-detailed-image">
                 </div>
@@ -106,9 +106,14 @@
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                     </div>
-                    <h5 class='price dark-purple no-margins'>
-                        $19.99
-                    </h5>
+                    <div class="price-and-cart-button">
+                        <h5 class='price dark-purple no-margins'>
+                            $19.99
+                        </h5>
+                        <div class="remove">
+                            <button class="small-yellow-button" onclick="removeCard(this)">Remove Item From Cart</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="selected-specs-summary">
                     <div class="size-color-quantity-summary">
@@ -121,24 +126,19 @@
                         <p class="cart-quantity">Quantity: 1</p>
                         <p class="red">(Edit)</p>
                     </div>
-                    <div class="remove">
-                        <button class="small-yellow-button">Remove Item From Cart</button>
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
         <div id="wishlist-items">
             <h3 class="purple no-margins">Your Wishlist</h3>
-        </div>
         <div id="wishlist-flexbox">
             <div class="wishlist-item-card">
                 <div class="cat-card-harness product-detailed-image">
                 </div>
                 <!-- Product High-Level Information -->
                 <div class="product-overview">
-                    <h5 class="no-margins dark-purple">Cat Food Storage Attachment</h5>
+                    <h5 class="no-margins dark-purple">Cat Harness</h5>
                     <div class="rating-stars">
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
@@ -150,14 +150,15 @@
                         <p class='dark-purple no-margins'>
                             $19.99
                         </p>
-                        <button class="purple-button">
+                        <a href="product-details.html"><button class="purple-button">
                             <h5 class="no-margins">Add to Cart</h5>
-                        </button>
+                        </button></a>
                     </div>
                 </div>
             </div>
 
             
+        </div>
         </div>
     </div>
    

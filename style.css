@@ -1273,7 +1273,7 @@ a .logo {
             grid-row: 1/6;
         }
 
-        #cart-empty > .purple-button {
+        #cart-empty > a {
             grid-column: 1/13;
             grid-row: 3/4;
             justify-self: center;
@@ -1340,7 +1340,7 @@ a .logo {
         #wishlist-items {
             grid-column: 3/11;
             align-self: start;
-
+            display: none;
         }
 
         #wishlist-flexbox {
@@ -1349,6 +1349,7 @@ a .logo {
             
             display: flex;
             flex-flow: row wrap;
+            margin-top: 20px;
         }
 
             #wishlist-flexbox > .wishlist-item-card {

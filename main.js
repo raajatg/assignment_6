@@ -13,6 +13,7 @@ function collapsibleInteraction(x) {
       };
 
 let cartCollection = [];
+let wishlistCollection = [];
 
 class cartAddition {
   constructor(product, price, color, size, quantity) {
@@ -22,6 +23,14 @@ class cartAddition {
     this.size = size;
     this.quantity = quantity;
     cartCollection.push(this);
+  }
+}
+
+class wishListAddition {
+  constructor(product,price){
+    this.product = product;
+    this.price = price;
+    wishlistCollection.push(this);
   }
 }
 
@@ -38,7 +47,7 @@ function checkCartOptionsSelected() {
   }
 }
 
-function productSpecSelection(x) {
+function productSpecSelection(x, name, itemPrice) {
   let pet = document.getElementsByClassName('your-pets product-spec-row')[0];
   let color = document.getElementsByClassName('color product-spec-row')[0];
   let size = document.getElementsByClassName('size product-spec-row')[0];
@@ -46,8 +55,8 @@ function productSpecSelection(x) {
   let productImage = document.getElementsByClassName('cat-card-harness product-detailed-image')[0];
   let cartButton = document.getElementById("add-to-cart-big");
   
-  productName = "Cat Harness";
-  price = "$19.99"
+  productName = name;
+  price = itemPrice;
   // setting the cart selection for pet pre-saved templates
   if (x === 'boris') {
     petChoice = "boris";
@@ -159,7 +168,6 @@ function productSpecSelection(x) {
   
 
   cartFull = checkCartOptionsSelected();
-  console.log(cartFull);
 
   if (cartFull === true) {
     cartButton.style.background = "#5DADA3";
@@ -176,7 +184,6 @@ let cartCount;
 
 function addToCart() {
   if (cartFull === true) {
-    console.log(cartCollection);
     new cartAddition(productName, price, colorChoice, sizeChoice, quantityChoice);
     cartCount = 0;
     for (i=0; i < cartCollection.length; i++) {
@@ -189,31 +196,36 @@ function addToCart() {
   }
 }
 
+let wishlistCount;
+
+function addToWishlist(name, price){
+  new wishListAddition(name, price);
+  wishlistCount = 0;
+    let wishlistDisplay = document.getElementsByClassName("shopping-features")[0].children[0];
+    wishlistDisplay.innerHTML = `<img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist (${wishlistCollection.length})`;
+    sessionStorage.setItem("wishlistCollection",JSON.stringify(wishlistCollection))
+}
+
 
 function checkCart() {
-  console.log("hello");
   let getNum = sessionStorage.getItem("cartCollection")
+  let getWish = sessionStorage.getItem("wishlistCollection")
   cartCollection = getNum ? JSON.parse(getNum) : [];
-  console.log(cartCollection);
+  wishlistCollection = getWish ? JSON.parse(getWish) : [];
   cartCount = 0;
     for (i=0; i < cartCollection.length; i++) {
       cartCount = cartCount + cartCollection[i].quantity
     }
     let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
     cartFeedback.innerHTML = `Cart (${cartCount})`;
+
+  wishlistCount = 0;
+  let wishlistDisplay = document.getElementsByClassName("shopping-features")[0].children[0];
+  wishlistDisplay.innerHTML = `<img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist (${wishlistCollection.length})`;  
 }
 
 function displayCart() {
-  console.log("hello");
-  let getNum = sessionStorage.getItem("cartCollection")
-  cartCollection = getNum ? JSON.parse(getNum) : [];
-  console.log(cartCollection);
-  cartCount = 0;
-    for (i=0; i < cartCollection.length; i++) {
-      cartCount = cartCount + cartCollection[i].quantity
-    }
-    let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
-    cartFeedback.innerHTML = `Cart (${cartCount})`;
+  checkCart();
 
   let emptyCartBanner = document.getElementById("cart-empty");
   let cartItems = document.getElementById("cart-items");
@@ -221,12 +233,11 @@ function displayCart() {
   let cartItemCard = document.getElementsByClassName("cart-item-card");
 
   if (cartCollection.length == 0) {
-    console.log(true);
     return;
   } else {
-    console.log(false);
     emptyCartBanner.style.display = "none";
     totalSummary.style.display = "block";
+    totalSummaryUpdate();
     cartItems.style.display = "block";
     duplicateCard(cartCollection);
     for (i=0; i < cartCollection.length; i++) {
@@ -240,21 +251,108 @@ function displayCart() {
       productName.innerHTML = cartCollection[i].product;
       image.style.backgroundImage = `url(./Images/cat-harness-${cartCollection[i].color}.png)`;
       price.innerHTML = cartCollection[i].price;
+
       let colorFixed = cartCollection[i].color.charAt(0).toUpperCase() + cartCollection[i].color.slice(1);
       colorFixed = colorFixed.replace('-', " ");
-      console.log(colorFixed);
       color.innerHTML = colorFixed
+
       size.innerHTML = cartCollection[i].size.toUpperCase();
-      quantity.innerHTML = `Quantity: ${cartCollection[i].quantity}`
+      quantity.innerHTML = `Quantity: ${cartCollection[i].quantity}`;
+
     }
   }
+  displayWishlist()
+}
+
+function displayWishlist() {
+  let wishlistSection = document.getElementById("wishlist-items");
+
+  if (wishlistCollection == 0) {
+    return;
+  } else {
+    wishlistSection.style.display = "block";
+  }
+
+}
+
+function totalSummaryUpdate() {
+  let cartSubtotal = 0;
+  for (i=0; i < cartCollection.length; i++) {
+    let priceFloat = Number(cartCollection[i].price.replace(/[^0-9\.-]+/g,""))
+    cartSubtotal = cartSubtotal + priceFloat
+  }
+  let subtotalDisplay = document.getElementsByClassName("subtotal green no-margins")[0];
+  subtotalDisplay.innerHTML = `Subtotal: $${cartSubtotal.toFixed(2)}`;
+
+  let quantityTotal = 0
+  for (i=0; i < cartCollection.length; i++) {
+    quantityTotal = quantityTotal + cartCollection[i].quantity;
+  }
+  let quantityDisplay = document.getElementsByClassName("total-items")[0];
+  if (quantityTotal == 1) {
+    quantityDisplay.innerHTML = `${quantityTotal} total item`;
+  } else {
+    quantityDisplay.innerHTML = `${quantityTotal} total items`;
+  }
+  
+
 }
 
 function duplicateCard(arr) {
   let cartItems = document.getElementById("cart-items");
   let cartItemCard = document.getElementsByClassName("cart-item-card")[0];
   for (i=0; i < arr.length-1; i++) {
-    let clone = cartItemCard.cloneNode(true)
-    cartItems.appendChild(clone)
+    let clone = cartItemCard.cloneNode(true);
+    clone.id = `order${i+1}`;
+    cartItems.appendChild(clone);
+  }
+}
+
+function removeCard(x) {
+  let newId = 0;
+  let card = x.parentNode.parentNode.parentNode.parentNode
+  let id = card.id;
+  id = parseInt(id.substring(id.length-1));
+  newId = id + 1;
+
+  console.log(id);
+  console.log(cartCollection);
+  if(document.getElementById("order0").style.display == "none") {
+    console.log("yes");
+    cartCollection.splice(id-1,1);
+  } else {
+    cartCollection.splice(id,1);
+  }
+
+
+  if (id == 0) {
+    card.style.display = "none";
+  } else {
+    if(document.getElementById("order0").style.display == "none") {
+      for(i=newId;i<cartCollection.length+2;i++) {
+        let impactedCard = document.getElementById(`order${i}`);
+        impactedCard.id = `order${i-1}`;
+        console.log(impactedCard.id)
+    } 
+  }
+  else {
+      for(i=newId;i<cartCollection.length+1;i++) {
+        let impactedCard = document.getElementById(`order${i}`);
+        impactedCard.id = `order${i-1}`;
+        console.log(impactedCard.id)
+    }
+    }
+    card.parentNode.removeChild(x.parentNode.parentNode.parentNode.parentNode)
+  } 
+
+  console.log(cartCollection);
+  sessionStorage.setItem("cartCollection",JSON.stringify(cartCollection))
+  checkCart();
+  totalSummaryUpdate();
+  if(cartCollection.length == 0) {
+    let emptyCartBanner = document.getElementById("cart-empty");
+    let totalSummary = document.getElementById("total-summary");
+    emptyCartBanner.style.display = "grid";
+    totalSummary.style.display = "none";
   }
 }
