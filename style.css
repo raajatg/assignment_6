@@ -1286,6 +1286,10 @@ a .logo {
         justify-self: end;
         text-align: end;
         display: none;
+        
+        background-color:#EBFEFE;
+        padding: 5px;
+        border-radius: 7%;
     }
 
     #cart-items {
