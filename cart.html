@@ -6,8 +6,9 @@
   <title>Product Browsing</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
 </head>
-<body>
+<body onload="displayCart()">
 <div class="wrapper">
     
     <!-- Upper Header -->
@@ -80,6 +81,10 @@
     </header>
 
     <div id="cart-view">
+        <div id="cart-empty">
+            <div id="sad-dog"></div>
+            <button class="purple-button"><h3>Start Adding Items to Cart</h3></button>
+        </div>
         <div id="total-summary">
             <h3 class="green no-margins">Subtotal: $19.99</h3>
             <p>1 item</p>
@@ -93,7 +98,7 @@
                 </div>
                 <!-- Product High-Level Information -->
                 <div class="product-overview">
-                    <h3 class=" no-margins dark-purple">Cat Food Storage Attachment</h3>
+                    <h3 class="product-name no-margins dark-purple">Cat Food Storage Attachment</h3>
                     <div class="rating-stars">
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
@@ -101,25 +106,28 @@
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                         <img class ="filled-star" src="Images/star-black.svg" alt="filled review star"/>
                     </div>
-                    <h5 class='dark-purple no-margins'>
+                    <h5 class='price dark-purple no-margins'>
                         $19.99
                     </h5>
                 </div>
                 <div class="selected-specs-summary">
-                    <div class="size-color-summary">
-                        <p>Tiny</p>
+                    <div class="size-color-quantity-summary">
+                        <p class="cart-size">Tiny</p>
                         <p class="red">(Edit)</p>
                         <p>&#9679;</p>
-                        <p>Strawberry</p>
+                        <p class="cart-color">Strawberry</p>
+                        <p class="red">(Edit)</p>
+                        <p>&#9679;</p>
+                        <p class="cart-quantity">Quantity: 1</p>
                         <p class="red">(Edit)</p>
                     </div>
-                    <div class="quantity-summary">
-                        <p>Quantity: 1</p>
-                        <p class="red">(Edit)</p>
+                    <div class="remove">
+                        <button class="small-yellow-button">Remove Item From Cart</button>
                     </div>
                     
                 </div>
             </div>
+            
         </div>
         <div id="wishlist-items">
             <h3 class="purple no-margins">Your Wishlist</h3>

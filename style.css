@@ -171,7 +171,23 @@ h2 {
         font-style: normal;
         font-weight: bold;
         font-size: calc(16em/14); 
-        line-height: calc(19em/14);
+        margin: 5px 0px;
+    }
+
+    .small-yellow-button {
+        background: #EECA74;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px #DDB8F9;
+        border-radius: 12px;
+        margin: 0 auto;
+        border: none;
+        padding-right: 12px;
+        padding-left: 12px;
+        width: fit-content;
+
+        color: #20004D;
+        font-style: normal;
+        font-weight: bold;
+        font-size: calc(16em/14); 
         margin: 5px 0px;
     }
 
@@ -1239,17 +1255,44 @@ a .logo {
     margin: 55px 20px;
 }
 
+    #cart-empty {
+        grid-column: 1/13;
+        margin: 0px -20px;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(5,35px);
+        grid-gap: 20px;
+    }
+
+        #sad-dog {
+            background-size:cover;
+            background-position: 50% 60%;
+            background-image: url(./Images/sad-dog.jpeg);
+
+            grid-column: 1/13;
+            grid-row: 1/6;
+        }
+
+        #cart-empty > .purple-button {
+            grid-column: 1/13;
+            grid-row: 3/4;
+            justify-self: center;
+            align-self: center;
+        }
+
     #total-summary {
         grid-column: 9/11;
         align-self: start;
         justify-self: end;
         text-align: end;
+        display: none;
     }
 
     #cart-items {
         grid-column: 3/9;
         grid-row: 1;
         align-self: start;
+        display: none;
     }
 
         .cart-item-card {
@@ -1257,7 +1300,7 @@ a .logo {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(3, 35px);
             grid-gap: 20px;
-            margin: 20px 0px;
+            margin: 35px 0px;
         }
 
             .cart-item-card > .product-detailed-image {
@@ -1278,16 +1321,18 @@ a .logo {
                     grid-row: 3/4;
                     display: flex;
                     flex-direction: column;
-                    margin-top: -10px;
-                    justify-content: center;
+                    justify-content: start;
+                    align-items: start;
+                    margin-top: -20px;
                 }
 
-                .size-color-summary {
+                .size-color-quantity-summary {
                     display: flex;
                     flex-direction: row;
+                    flex-wrap: wrap;
                 }
 
-                .quantity-summary {
+                .remove {
                     display: flex;
                     flex-direction: row;
                 }

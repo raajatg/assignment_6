@@ -12,24 +12,33 @@ function collapsibleInteraction(x) {
         };
       };
 
-let cartItems = {
-  let productSpecs = {productName: "cat-harness", color:"", size:"", quantity:"", itemAdded: false}
+let cartCollection = [];
+
+class cartAddition {
+  constructor(product, price, color, size, quantity) {
+    this.product = product;
+    this.price = price;
+    this.color = color;
+    this.size = size;
+    this.quantity = quantity;
+    cartCollection.push(this);
+  }
 }
+
 let petChoice;
 let colorChoice;
 let sizeChoice;
 let quantityChoice;
 
-function checkCartOptionsSelected(obj) {
-  for (let key in obj) {
-    if(obj[key] === "" || obj[key] === 0)
+function checkCartOptionsSelected() {
+    if(colorChoice == null || sizeChoice == null || quantityChoice < 1 || quantityChoice == null) {
       return false;
+  } else {
+    return true;
   }
-  return true;
 }
 
 function productSpecSelection(x) {
-  console.log(productSpecs);
   let pet = document.getElementsByClassName('your-pets product-spec-row')[0];
   let color = document.getElementsByClassName('color product-spec-row')[0];
   let size = document.getElementsByClassName('size product-spec-row')[0];
@@ -37,37 +46,26 @@ function productSpecSelection(x) {
   let productImage = document.getElementsByClassName('cat-card-harness product-detailed-image')[0];
   let cartButton = document.getElementById("add-to-cart-big");
   
+  productName = "Cat Harness";
+  price = "$19.99"
   // setting the cart selection for pet pre-saved templates
   if (x === 'boris') {
     petChoice = "boris";
     colorChoice = "strawberry";
     sizeChoice = "xs";
     quantityChoice = 1;
-
-    productSpecs.color = "strawberry",
-    productSpecs.size = "xs",
-    productSpecs.quantity = 1
     
   } else if (x === "ted") {
     petChoice = "ted";
     colorChoice = "blackberry";
     sizeChoice = "s";
     quantityChoice = 1;
-
-    productSpecs.color = "blackberry",
-    productSpecs.size = "s",
-    productSpecs.quantity = 1
     
   } else if (x === "ernie") {
     petChoice = "ernie";
     colorChoice = "fire-orange";
     sizeChoice = "m";
     quantityChoice = 1;
-
-    productSpecs.color = "fire-orange",
-    productSpecs.size = "m",
-    productSpecs.quantity = 1
-     
 
   // setting color selections and saving them to cart selection
   } else if ( x === "strawberry" || 
@@ -76,8 +74,6 @@ function productSpecSelection(x) {
               x == "fire-orange") {
     colorChoice = x;
 
-    productSpecs.color = x;
-
   // setting size selections and saving them to cart selection
   } else if ( x === "xs" || 
               x == "s" || 
@@ -85,15 +81,18 @@ function productSpecSelection(x) {
               x == "l") {
   sizeChoice = x;
 
-  productSpecs.size = x;
-
   // setting quantity selections and saving them to cart selection
   } else if (x === "quantity") {
     let num = parseInt(quantity.value)
     
     quantityChoice = num;
 
-    productSpecs.quantity = num;
+  } else if (x == null) {
+    petChoice = null;
+    colorChoice = null;
+    sizeChoice = null;
+    quantityChoice = null;
+    quantity.value = 0;
   }
 
 
@@ -157,9 +156,9 @@ function productSpecSelection(x) {
     quantity.value = quantityChoice;
   } 
   
-  console.log(productSpecs);
+  
 
-  cartFull = checkCartOptionsSelected(productSpecs);
+  cartFull = checkCartOptionsSelected();
   console.log(cartFull);
 
   if (cartFull === true) {
@@ -173,12 +172,89 @@ function productSpecSelection(x) {
   }
 }
 
-
+let cartCount;
 
 function addToCart() {
   if (cartFull === true) {
-    productSpecs.itemAdded = true;
-    let cartCount = document.getElementsByClassName("cart-nav")[0].children[1];
-    cartCount.innerHTML = `Cart (${productSpecs.quantity})`;
+    console.log(cartCollection);
+    new cartAddition(productName, price, colorChoice, sizeChoice, quantityChoice);
+    cartCount = 0;
+    for (i=0; i < cartCollection.length; i++) {
+      cartCount = cartCount + cartCollection[i].quantity
+    }
+    let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
+    cartFeedback.innerHTML = `Cart (${cartCount})`;
+    productSpecSelection();
+    sessionStorage.setItem("cartCollection",JSON.stringify(cartCollection))
+  }
+}
+
+
+function checkCart() {
+  console.log("hello");
+  let getNum = sessionStorage.getItem("cartCollection")
+  cartCollection = getNum ? JSON.parse(getNum) : [];
+  console.log(cartCollection);
+  cartCount = 0;
+    for (i=0; i < cartCollection.length; i++) {
+      cartCount = cartCount + cartCollection[i].quantity
+    }
+    let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
+    cartFeedback.innerHTML = `Cart (${cartCount})`;
+}
+
+function displayCart() {
+  console.log("hello");
+  let getNum = sessionStorage.getItem("cartCollection")
+  cartCollection = getNum ? JSON.parse(getNum) : [];
+  console.log(cartCollection);
+  cartCount = 0;
+    for (i=0; i < cartCollection.length; i++) {
+      cartCount = cartCount + cartCollection[i].quantity
+    }
+    let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
+    cartFeedback.innerHTML = `Cart (${cartCount})`;
+
+  let emptyCartBanner = document.getElementById("cart-empty");
+  let cartItems = document.getElementById("cart-items");
+  let totalSummary = document.getElementById("total-summary");
+  let cartItemCard = document.getElementsByClassName("cart-item-card");
+
+  if (cartCollection.length == 0) {
+    console.log(true);
+    return;
+  } else {
+    console.log(false);
+    emptyCartBanner.style.display = "none";
+    totalSummary.style.display = "block";
+    cartItems.style.display = "block";
+    duplicateCard(cartCollection);
+    for (i=0; i < cartCollection.length; i++) {
+      let productName = cartItemCard[i].getElementsByClassName("product-name no-margins dark-purple")[0];
+      let image = cartItemCard[i].getElementsByClassName("cat-card-harness product-detailed-image")[0];
+      let price = cartItemCard[i].getElementsByClassName("price no-margins dark-purple")[0];
+      let size = cartItemCard[i].getElementsByClassName("cart-size")[0];
+      let color = cartItemCard[i].getElementsByClassName("cart-color")[0];
+      let quantity = cartItemCard[i].getElementsByClassName("cart-quantity")[0];
+
+      productName.innerHTML = cartCollection[i].product;
+      image.style.backgroundImage = `url(./Images/cat-harness-${cartCollection[i].color}.png)`;
+      price.innerHTML = cartCollection[i].price;
+      let colorFixed = cartCollection[i].color.charAt(0).toUpperCase() + cartCollection[i].color.slice(1);
+      colorFixed = colorFixed.replace('-', " ");
+      console.log(colorFixed);
+      color.innerHTML = colorFixed
+      size.innerHTML = cartCollection[i].size.toUpperCase();
+      quantity.innerHTML = `Quantity: ${cartCollection[i].quantity}`
+    }
+  }
+}
+
+function duplicateCard(arr) {
+  let cartItems = document.getElementById("cart-items");
+  let cartItemCard = document.getElementsByClassName("cart-item-card")[0];
+  for (i=0; i < arr.length-1; i++) {
+    let clone = cartItemCard.cloneNode(true)
+    cartItems.appendChild(clone)
   }
 }

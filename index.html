@@ -6,8 +6,9 @@
   <title>Muddy Paws</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
 </head>
-<body>
+<body onload="checkCart()">
 <div class="wrapper">
 
 <!-- Upper Header -->
@@ -34,10 +35,12 @@
       </div>
       <!-- Cart + Wishlist + Compare -->
       <div class="shopping">
-        <div class="cart-nav">
-          <img class="icon" src="Images/Cart.svg" alt="Shopping Cart icon">
-          <h3 class="purple">Cart (0)</h3>
-        </div>
+        <a href='cart.html'>
+          <div class="cart-nav">
+            <img class="icon" src="Images/Cart.svg" alt="Shopping Cart icon">
+            <h3 class="purple">Cart (0)</h3>
+          </div>
+        </a>
         <div class="shopping-features">
             <h4 class="purple no-margins"><img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist</h4>
             <h4 class="purple no-margins"><img class="icon" src="Images/Compare.svg" alt="compare icon">Compare</h4>
