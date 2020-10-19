@@ -192,7 +192,7 @@ function addToCart() {
     let cartFeedback = document.getElementsByClassName("cart-nav")[0].children[1];
     cartFeedback.innerHTML = `Cart (${cartCount})`;
     productSpecSelection();
-    sessionStorage.setItem("cartCollection",JSON.stringify(cartCollection))
+    localStorage.setItem("cartCollection",JSON.stringify(cartCollection))
   }
 }
 
@@ -203,13 +203,13 @@ function addToWishlist(name, price){
   wishlistCount = 0;
     let wishlistDisplay = document.getElementsByClassName("shopping-features")[0].children[0];
     wishlistDisplay.innerHTML = `<img class="icon" src="Images/Heart-Filled.svg" alt="wishlist icon">Wishlist (${wishlistCollection.length})`;
-    sessionStorage.setItem("wishlistCollection",JSON.stringify(wishlistCollection))
+    localStorage.setItem("wishlistCollection",JSON.stringify(wishlistCollection))
 }
 
 
 function checkCart() {
-  let getNum = sessionStorage.getItem("cartCollection")
-  let getWish = sessionStorage.getItem("wishlistCollection")
+  let getNum = localStorage.getItem("cartCollection")
+  let getWish = localStorage.getItem("wishlistCollection")
   cartCollection = getNum ? JSON.parse(getNum) : [];
   wishlistCollection = getWish ? JSON.parse(getWish) : [];
   cartCount = 0;
@@ -233,6 +233,7 @@ function displayCart() {
   let cartItemCard = document.getElementsByClassName("cart-item-card");
 
   if (cartCollection.length == 0) {
+    emptyCartBanner.style.display = "grid";
     return;
   } else {
     emptyCartBanner.style.display = "none";
@@ -329,7 +330,7 @@ function removeCard(x) {
 
   console.log(cartCollection);
 
-  sessionStorage.setItem("cartCollection",JSON.stringify(cartCollection))
+  localStorage.setItem("cartCollection",JSON.stringify(cartCollection))
   checkCart();
   totalSummaryUpdate();
 

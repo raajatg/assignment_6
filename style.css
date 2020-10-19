@@ -1262,6 +1262,7 @@ a .logo {
         grid-template-columns: repeat(12,1fr);
         grid-template-rows: repeat(5,35px);
         grid-gap: 20px;
+        display: none;
     }
 
         #sad-dog {
