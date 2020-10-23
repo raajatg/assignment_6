@@ -11,7 +11,7 @@ a {
     text-decoration: none;
 }
 
-p {
+p, label {
     font-style: normal;
     font-weight: normal;
     font-size: 1em;
@@ -45,7 +45,6 @@ h4.bold {
     letter-spacing: -0.01em; 
     margin: 5px;
 }
-}
 
 h3 {
     font-style: normal;
@@ -67,7 +66,7 @@ h2 {
 /* Limits on responsive font size to prevent awkward sizes */
 
 @media screen and (min-width: 1600px) {
-    p {
+    p, label {
         font-size: 16px;
     }
     h5 {
@@ -82,11 +81,13 @@ h2 {
     h2 {
         font-size: 44px;
     }
-
+    button {
+        font-size: 28px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-    p {
+    p, label {
         font-size: 12px;
     }
     h5 {
@@ -100,6 +101,9 @@ h2 {
     }
     h2 {
         font-size: 30px;
+    }
+    button {
+        font-size: 14px;
     }
 
 }
@@ -165,6 +169,8 @@ h2 {
         border: none;
         padding-right: 12px;
         padding-left: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         width: fit-content;
 
         color: white;
@@ -496,9 +502,10 @@ a .logo {
     /* Placement for carousel button */
     .carousel-button {
         grid-column: 8/12;
-        grid-row: 5;
+        grid-row: 5/7;
         z-index: 3;
         justify-self: start;
+        align-self: start;
     }
 
     
@@ -1122,12 +1129,30 @@ a .logo {
             justify-content: center;
             align-items: center;
             gap: 1em;
+            height: 3em;
+
+            font-style: normal;
+            font-weight: bold;
+            color: white;
+            font-size: calc(24em/14);
+            letter-spacing: -0.05em;
+            font-feature-settings: 'liga' off;
+            vertical-align: middle;
         }
         #product-selection-buttons .yellow-button {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 1em;
+            height: 3em;
+
+            font-style: normal;
+            font-weight: bold;
+            color: white;
+            font-size: calc(24em/14);
+            letter-spacing: -0.05em;
+            font-feature-settings: 'liga' off;
+            vertical-align: middle;
         }
 
 /* Collapsible Section */
@@ -1278,11 +1303,20 @@ a .logo {
         }
 
         /* defines positioning of button in empty cart banner grid */
-        #cart-empty > a {
+        #cart-empty > button {
             grid-column: 1/13;
-            grid-row: 3/4;
+            grid-row: 3/5;
             justify-self: center;
             align-self: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            font-style: normal;
+            font-weight: bold;
+            font-size: calc(24em/14);
+            letter-spacing: -0.05em;
+            font-feature-settings: 'liga' off;
+            vertical-align: middle;
         }
 
     /* defines positioning of cart subtotal box in cart page grid */
