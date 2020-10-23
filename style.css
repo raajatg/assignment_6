@@ -1246,8 +1246,9 @@ a .logo {
             grid-column: 2/13;
         }
 
-/*Cart*/
+/* CART PAGE */
 
+/* creates grid system that the cart items will be encapsulated in */
 #cart-view {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -1255,6 +1256,7 @@ a .logo {
     margin: 55px 20px;
 }
 
+    /* creates grid system to display empty cart banner in */
     #cart-empty {
         grid-column: 1/13;
         margin: 0px -20px;
@@ -1265,6 +1267,7 @@ a .logo {
         display: none;
     }
 
+        /* defines image to use in empty cart banner */
         #sad-dog {
             background-size:cover;
             background-position: 50% 60%;
@@ -1274,6 +1277,7 @@ a .logo {
             grid-row: 1/6;
         }
 
+        /* defines positioning of button in empty cart banner grid */
         #cart-empty > a {
             grid-column: 1/13;
             grid-row: 3/4;
@@ -1281,6 +1285,7 @@ a .logo {
             align-self: center;
         }
 
+    /* defines positioning of cart subtotal box in cart page grid */
     #total-summary {
         grid-column: 9/11;
         align-self: start;
@@ -1293,13 +1298,14 @@ a .logo {
         border-radius: 7%;
     }
 
+    /* defines positioning of cart item cards */
     #cart-items {
         grid-column: 3/9;
         grid-row: 1;
         align-self: start;
         display: none;
     }
-
+        /* creates a grid system for each cart item card */
         .cart-item-card {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -1308,6 +1314,7 @@ a .logo {
             margin: 35px 0px;
         }
 
+            /* defines positioning for images within card */
             .cart-item-card > .product-detailed-image {
                 grid-row: 1/4;
                 grid-column: 1/3;
@@ -1316,11 +1323,12 @@ a .logo {
                 background-position: center center;
             }
 
+            /* defines positioning for product name / price / review */
             .cart-item-card > .product-overview {
                 grid-column: 3/7;
                 grid-row: 1/3;
             }
-
+                /* defines positioning for item specs (color, size) */
                 .selected-specs-summary {
                     grid-column: 3/7;
                     grid-row: 3/4;
@@ -1330,24 +1338,28 @@ a .logo {
                     align-items: start;
                     margin-top: -20px;
                 }
-
+                
+                /* defines positioning for item specs (quantity) */
                 .size-color-quantity-summary {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
                 }
 
+                /* defines positioning for remove item button */
                 .remove {
                     display: flex;
                     flex-direction: row;
                 }
 
+        /* positions wishlist below all cart items */
         #wishlist-items {
             grid-column: 3/11;
             align-self: start;
             display: none;
         }
 
+        /* puts wishlist items in wrapped flexbox to allow for overflow */
         #wishlist-flexbox {
             grid-column: 3/11;
             align-self: start;
@@ -1357,6 +1369,7 @@ a .logo {
             margin-top: 20px;
         }
 
+        /* defines positioning of wishlist items cards */
             #wishlist-flexbox > .wishlist-item-card {
                 width: 31%;
                 min-width: 337px;
